@@ -4,8 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body></body>
-  <script src="./gameoflife.js"></script>
-  <script src="./main.js"></script>
+  <body>
+    <section id="intro">
+      <h1>Conway's Game of life</h1>
+      <p>
+        A web canvas implementation of "The Game of Life", a cellular automaton
+        created by John Conway.
+      </p>
+    </section>
+    <section id="ui">
+      <div id="controls">
+        <h2>Controls</h2>
+        <div>
+          <label for="ui-speed">Speed: </label>
+          <input
+            type="number"
+            id="ui-speed"
+            name="ui-speed"
+            min="0"
+            max="10000"
+            step="200"
+            value="200"
+          />
+          ms
+        </div>
+        <div>
+          <button id="ui-run" class="btn btn-primary">Run</button>
+          <button id="ui-pause" class="btn btn-primary">Pause</button>
+        </div>
+      </div>
+      <canvas id="cells"></canvas>
+    </section>
+
+    <section id="rules">
+      <h2>Rules</h2>
+      <ul>
+        <li>Any live cell with two or three live neighbours survives.</li>
+        <li>Any dead cell with three live neighbours becomes a live cell.</li>
+        <li>
+          All other live cells die in the next generation. Similarly, all other
+          dead cells stay dead.
+        </li>
+      </ul>
+    </section>
+  </body>
+  <script src="./js/gameoflife.js"></script>
+  <script src="./js/main.js"></script>
 </html>
